@@ -1,6 +1,6 @@
-NMLFrameworkPython
-Developed by: Ahmed Domyaty
-___________________________________________
+# NMLFrameworkPython #
+*Developed by: Ahmed Domyaty*
+
 
 To build, use your shell to navigate to the directory containing this readme.
 
