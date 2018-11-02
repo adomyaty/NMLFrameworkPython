@@ -1,0 +1,40 @@
+// -- begin truck --/
+
+spriteset(ss_truck_${id}, "cabover_truck_test.png") {
+  spriteset_template_truck_16(0, 20) // (search 'sprites/nml' to find where spriteset templates are defined)  
+}
+
+spritegroup sg_truck_${id} {
+    loaded: ss_truck_${id};
+    loading: ss_truck_${id};
+}
+
+item(FEAT_ROADVEHS, truck_${id}) {
+    property {
+        name: string(str_name_truck_${id});
+        climates_available: ALL_CLIMATES; // nml constant
+        sound_effect: SOUND_TRUCK_START_2; //nml constant  
+        visual_effect: visual_effect(VISUAL_EFFECT_DIESEL, 0); // nml constant for DIESEL
+        introduction_date: date(1900,01,01); //
+        cargo_capacity: 0;
+        sprite_id: SPRITE_ID_NEW_ROADVEH; //enable new graphics - nml constant
+        speed: 30mph;
+        power: 100hp;
+        weight: 10;
+        tractive_effort_coefficient: 0.3; // just use default value until evidence arises for need to vary this per truck
+        cost_factor: 100;
+        running_cost_factor: 10;
+        refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS,CC_LIQUID, CC_REFRIGERATED, CC_COVERED,);
+        non_refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        cargo_allow_refit: [];
+        cargo_disallow_refit: [];
+        misc_flags: bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_AUTOREFIT); // nml constants
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 255;
+    }
+    graphics {
+        default: sg_truck_${id};
+    }
+}
+
+// -- end truck --/

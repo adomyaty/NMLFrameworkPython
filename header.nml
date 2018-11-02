@@ -1,0 +1,58 @@
+// define the newgrf
+grf {
+ grfid: "\11\11\11\1";
+ name: string(str_grf_name);
+ desc: string(str_grf_description);
+ version: 1;
+ min_compatible_version: 1;
+}
+
+/*
+ * ********************************************
+ * Define cargo translation table and refits
+ * ********************************************
+ */
+
+cargotable { // cargos needed for special refit orders
+    WDPR, SCRP, CMNT, WOOD, // bulk, bulk+piece+flat, tank, piece
+    LVST, STEL, VEHI, BRCK, // piece+flat, piece, piece, piece
+    WOOL, BUBL, TOYS, FZDR, // flat, flat, flat, tank
+    FRUT, FRVG, FOOD, FICR, // bulk, bulk, piece, flatbed
+    RUBR, RFPR, PETR, // piece, flatbed, flatbed
+                                    // cargos only referenced
+    OIL_, GOOD, WATR, MILK,
+    COAL, IORE, AORE, CLAY,
+    GRVL, SAND, GRAI, RSGR,
+    MAIZ, CORE, FERT, CTCD,
+    SULP, WHEA, COLA, CERE,
+    PAPR, TOFF, SUGR, PLAS,
+    PASS, MAIL, BATT, SWET,
+    FMSP, ENSP, MNSP, DYES,
+    PLST, LIME, COPR, SGCN,
+    SGBT, OLSD
+}
+
+template spriteset_template_truck_16(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x, y, 10, 28, -4, -9]
+    [x+ 20, y, 26, 28, -17, -14]
+    [x+ 50, y, 36, 28, -26, -20]
+    [x+ 90, y, 26, 28, -9, -15]
+    [x+120, y, 10, 28, -4, -17]
+    [x+140, y, 26, 28, -16, -16]
+    [x+170, y, 36, 28, -16, -20]
+    [x+210, y, 26, 28, -8, -16]
+}
+
+template spriteset_template_truck_28(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x, y, 10, 28, -4, -11]
+    [x+ 20, y, 26, 28, -17, -14]
+    [x+ 50, y, 36, 28, -20, -20]
+    [x+ 90, y, 26, 28, -9, -15]
+    [x+120, y, 10, 28, -4, -13]
+    [x+140, y, 26, 28, -16, -16]
+    [x+170, y, 36, 28, -16, -20]
+    [x+210, y, 26, 28, -8, -16]
+}
+// -- end header --//
